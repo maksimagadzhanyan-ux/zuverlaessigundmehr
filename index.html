@@ -1,860 +1,2269 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zuverlässig & Mehr — Hochdruckreinigung für Außenflächen</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --imperial-deep:#0d1840;
-    --imperial:#1c2f6e;
-    --imperial-light:#34489e;
-    --imperial-mist:#eef1fa;
-    --white:#ffffff;
-    --mist:#f5f7fb;
-    --ink:#151f38;
-    --ink-soft:#4a5474;
-    --line:#d9deef;
-    --max:1180px;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{overflow-x:hidden;}
-  body{
-    font-family:'Manrope',sans-serif;
-    color:var(--ink);
-    background:var(--white);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,h4{
-    font-family:'Fraunces',serif;
-    font-weight:450;
-    color:var(--imperial-deep);
-    line-height:1.15;
-    letter-spacing:-0.01em;
-  }
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-  ul{list-style:none;}
-  .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,32px);}
-  section{padding:110px 0;}
-  .eyebrow{
-    font-family:'Manrope',sans-serif;
-    font-weight:700;
-    font-size:12.5px;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    color:var(--imperial-light);
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:18px;
-  }
-  .eyebrow::before{
-    content:'';
-    width:26px;height:1px;
-    background:var(--imperial-light);
-    display:inline-block;
-  }
-  .section-head{max-width:640px;margin-bottom:56px;}
-  .section-head h2{font-size:clamp(28px,3.6vw,42px);}
-  .section-head p{color:var(--ink-soft);font-size:16.5px;margin-top:16px;}
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:10px;
-    padding:16px 30px;
-    border-radius:2px;
-    font-family:'Manrope',sans-serif;
-    font-weight:600;
-    font-size:14.5px;
-    letter-spacing:.02em;
-    cursor:pointer;
-    border:1px solid transparent;
-    transition:all .35s cubic-bezier(.65,0,.35,1);
-  }
-  .btn-primary{background:var(--imperial);color:var(--white);}
-  .btn-primary:hover{background:var(--imperial-deep);}
-  .btn-ghost{border-color:var(--imperial);color:var(--imperial-deep);}
-  .btn-ghost:hover{background:var(--imperial);color:var(--white);}
-  .btn-ghost-light{border-color:rgba(255,255,255,.55);color:var(--white);}
-  .btn-ghost-light:hover{background:var(--white);color:var(--imperial-deep);}
+  <title>WaschBären Service — Reinigung für Außenflächen</title>
 
-  /* ---------- WIPE SIGNATURE ---------- */
-  .reveal{position:relative;overflow:hidden;}
-  .reveal::after{
-    content:'';
-    position:absolute;inset:0;
-    background:var(--imperial);
-    transform-origin:left;
-    transform:scaleX(1);
-    transition:transform .95s cubic-bezier(.7,0,.3,1);
-    z-index:3;
-  }
-  .reveal.revealed::after{transform:scaleX(0);transform-origin:right;}
-  .reveal > *{opacity:0;transition:opacity .3s ease .55s;}
-  .reveal.revealed > *{opacity:1;}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  /* ---------- HEADER ---------- */
-  header{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    padding:26px 0;
-    transition:all .4s ease;
-    background:transparent;
-  }
-  header.scrolled{
-    background:rgba(13,24,64,.94);
-    padding:16px 0;
-    backdrop-filter:blur(6px);
-    box-shadow:0 2px 24px rgba(13,24,64,.15);
-  }
-  header .wrap{display:flex;align-items:center;justify-content:space-between;}
-  .logo{
-    font-family:'Fraunces',serif;
-    font-size:21px;
-    color:var(--white);
-    letter-spacing:.01em;
-  }
-  .logo em{font-style:italic;font-weight:300;color:#cdd6f0;}
-  nav ul{display:flex;gap:36px;}
-  nav a{
-    font-size:14px;font-weight:500;color:rgba(255,255,255,.88);
-    position:relative;padding:4px 0;
-  }
-  nav a::after{
-    content:'';position:absolute;left:0;bottom:-2px;height:1px;width:100%;
-    background:var(--white);
-    transform:scaleX(0);transform-origin:right;
-    transition:transform .4s cubic-bezier(.65,0,.35,1);
-  }
-  nav a:hover::after{transform:scaleX(1);transform-origin:left;}
-  .header-cta{display:flex;align-items:center;gap:22px;}
-  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px;}
-  .nav-toggle span{display:block;width:24px;height:2px;background:var(--white);margin:5px 0;transition:.3s;}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-  /* ---------- HERO ---------- */
-  .hero{
-    min-height:100vh;
-    display:flex;align-items:center;
-    background:linear-gradient(155deg,var(--imperial-deep) 0%,var(--imperial) 62%,var(--imperial-light) 100%);
-    position:relative;
-    overflow:hidden;
-    padding-top:120px;
-  }
-  .hero::before{
-    content:'';
-    position:absolute;
-    width:900px;height:900px;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:50%;
-    top:-320px;right:-260px;
-  }
-  .hero::after{
-    content:'';
-    position:absolute;
-    width:640px;height:640px;
-    border:1px solid rgba(255,255,255,.06);
-    border-radius:50%;
-    top:-160px;right:-100px;
-  }
-  .hero .wrap{
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-    gap:70px;
-    align-items:center;
-    position:relative;z-index:2;
-  }
-  .hero-eyebrow{
-    font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-    color:#a9b8e8;margin-bottom:24px;display:flex;align-items:center;gap:10px;
-  }
-  .hero-eyebrow::before{content:'';width:26px;height:1px;background:#a9b8e8;}
-  .hero h1{
-    font-size:clamp(54px,8vw,104px);
-    color:var(--white);
-    font-weight:450;
-    margin-bottom:18px;
-    max-width:700px;
-  }
-  .hero h1 em{font-style:italic;font-weight:300;color:#c6d1f2;}
-  .hero-subtitle{
-    font-family:'Manrope',sans-serif;
-    font-size:clamp(20px,2.4vw,30px);
-    line-height:1.25;
-    font-weight:600;
-    color:#ffffff;
-    max-width:560px;
-    margin-bottom:16px;
-  }
-  .hero p.lead{
-    color:#d3daf3;font-size:17.5px;max-width:560px;margin-bottom:36px;
-  }
-  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:46px;}
-  .hero-trust{display:flex;gap:34px;flex-wrap:wrap;}
-  .hero-trust div{color:#eef1fa;}
-  .hero-trust strong{
-    display:block;font-family:'Fraunces',serif;font-size:26px;font-weight:450;color:var(--white);
-  }
-  .hero-trust span{font-size:12.5px;color:#a9b8e8;letter-spacing:.03em;}
+  <style>
+    :root {
+      --imperial-deep: #0d1840;
+      --imperial: #1c2f6e;
+      --imperial-light: #34489e;
+      --imperial-mist: #eef1fa;
+      --white: #ffffff;
+      --mist: #f5f7fb;
+      --ink: #151f38;
+      --ink-soft: #4a5474;
+      --line: #d9deef;
+      --max: 1180px;
+    }
 
-  .hero-media{position:relative;}
-  .hero-media .media-slot{aspect-ratio:4/5;border-radius:2px;}
-  .hero-media::before{
-    content:'';
-    position:absolute;
-    top:24px;left:-24px;right:24px;bottom:-24px;
-    border:1px solid rgba(255,255,255,.35);
-    z-index:0;
-  }
-  .hero-media .media-slot{position:relative;z-index:1;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  /* ---------- MEDIA PLACEHOLDER ---------- */
-  .media-slot{
-    background:linear-gradient(135deg,var(--imperial-mist) 0%,#e2e7f6 100%);
-    border:1px dashed var(--imperial-light);
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;color:var(--imperial);
-    gap:10px;
-    width:100%;
-  }
-  .media-slot svg{width:34px;height:34px;opacity:.55;}
-  .media-slot .slot-label{font-family:'Fraunces',serif;font-size:19px;font-style:italic;}
-  .media-slot .slot-sub{font-size:11.5px;color:var(--ink-soft);letter-spacing:.03em;text-transform:uppercase;}
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* ---------- MARQUEE / USP STRIP ---------- */
-  .usp-strip{
-    background:var(--imperial-deep);
-    padding:0;
-    overflow:hidden;
-  }
-  .usp-track{
-    display:flex;gap:0;white-space:nowrap;
-    animation:scrollx 32s linear infinite;
-  }
-  .usp-track span{
-    color:#dbe2f6;font-family:'Fraunces',serif;font-style:italic;font-weight:450;
-    font-size:17px;padding:22px 40px;border-right:1px solid rgba(255,255,255,.14);
-  }
-  @keyframes scrollx{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    body {
+      overflow-x: hidden;
+      font-family: 'Manrope', sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  /* ---------- LEISTUNGEN ---------- */
-  .services{background:var(--white);}
-  .service-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
-  .service-card{
-    background:var(--white);
-    padding:44px 36px;
-    transition:background .35s ease;
-  }
-  .service-card:hover{background:var(--mist);}
-  .service-num{
-    font-family:'Fraunces',serif;font-style:italic;color:var(--imperial-light);
-    font-size:14px;margin-bottom:22px;display:block;
-  }
-  .service-card h3{font-size:21px;margin-bottom:12px;}
-  .service-card p{color:var(--ink-soft);font-size:15px;}
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', serif;
+      font-weight: 450;
+      color: var(--imperial-deep);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
 
-  /* ---------- ÜBER UNS ---------- */
-  .about{background:var(--mist);}
-  .about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center;}
-  .about .media-slot{aspect-ratio:4/5;}
-  .about-copy p{color:var(--ink-soft);font-size:16px;margin-bottom:18px;}
-  .about-facts{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px;}
-  .about-facts li{
-    padding-top:16px;border-top:1px solid var(--line);
-  }
-  .about-facts strong{display:block;font-family:'Fraunces',serif;font-size:15px;color:var(--imperial-deep);margin-bottom:4px;}
-  .about-facts span{font-size:14px;color:var(--ink-soft);}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  /* ---------- ABLAUF ---------- */
-  .process{background:var(--imperial-deep);color:var(--white);}
-  .process .eyebrow{color:#a9b8e8;}
-  .process .eyebrow::before{background:#a9b8e8;}
-  .process .section-head h2{color:var(--white);}
-  .process .section-head p{color:#c1cbec;}
-  .process-list{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;}
-  .process-step{border-top:1px solid rgba(255,255,255,.2);padding-top:24px;}
-  .process-step .step-index{
-    font-family:'Fraunces',serif;font-style:italic;font-size:34px;color:#7d90d1;display:block;margin-bottom:18px;
-  }
-  .process-step h3{color:var(--white);font-size:19px;margin-bottom:10px;font-weight:450;}
-  .process-step p{color:#c1cbec;font-size:14.5px;}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-  /* ---------- GALERIE ---------- */
-  .gallery{background:var(--white);}
-  .gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-  }
-  .gallery-grid .media-slot{aspect-ratio:3/4;}
-  .gallery-grid > div:nth-child(2){transform:translateY(28px);}
-  .gallery-grid > div:nth-child(4){transform:translateY(28px);}
+    ul {
+      list-style: none;
+    }
 
-  /* ---------- BEWERTUNGEN ---------- */
-  .testimonials{background:var(--imperial-mist);}
-  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
-  .testi-card{
-    background:var(--white);
-    padding:36px 32px;
-    border-top:2px solid var(--imperial);
-  }
-  .testi-quote{
-    font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--imperial-deep);
-    margin-bottom:22px;
-  }
-  .testi-name{font-weight:700;font-size:14px;}
-  .testi-role{font-size:13px;color:var(--ink-soft);}
-  .stars{color:var(--imperial-light);letter-spacing:2px;margin-bottom:14px;font-size:14px;}
+    .wrap {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 clamp(20px, 4vw, 32px);
+    }
 
-  /* ---------- CTA BAND ---------- */
-  .cta-band{
-    position:relative;
-    background:var(--imperial);
-    color:var(--white);
-    overflow:hidden;
-  }
-  .cta-band .media-slot{
-    position:absolute;inset:0;height:100%;border:none;border-radius:0;opacity:.22;
-  }
-  .cta-band .wrap{position:relative;z-index:2;text-align:center;max-width:680px;}
-  .cta-band .eyebrow{color:#c6d1f2;justify-content:center;}
-  .cta-band .eyebrow::before{background:#c6d1f2;}
-  .cta-band h2{color:var(--white);font-size:clamp(30px,4vw,44px);margin-bottom:18px;}
-  .cta-band p{color:#d3daf3;font-size:16.5px;margin-bottom:34px;}
-  .cta-band .btn-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+    section {
+      padding: 110px 0;
+    }
 
-  /* ---------- KONTAKT ---------- */
-  .contact{background:var(--white);}
-  .contact .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;}
-  .contact-info h2{font-size:clamp(28px,3.6vw,38px);margin-bottom:20px;}
-  .contact-info > p{color:var(--ink-soft);margin-bottom:36px;}
-  .info-item{display:flex;gap:16px;padding:18px 0;border-top:1px solid var(--line);}
-  .info-item:last-of-type{border-bottom:1px solid var(--line);}
-  .info-item svg{width:20px;height:20px;color:var(--imperial-light);flex-shrink:0;margin-top:2px;}
-  .info-item strong{display:block;font-size:14.5px;margin-bottom:3px;}
-  .info-item span{font-size:14px;color:var(--ink-soft);}
+    .eyebrow {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 12.5px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--imperial-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
 
-  .contact-form{background:var(--mist);padding:44px;border:1px solid var(--line);}
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
-  .field{display:flex;flex-direction:column;gap:8px;}
-  .field.full{grid-column:1/-1;}
-  .field label{font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--imperial-deep);}
-  .field input,.field select,.field textarea{
-    border:1px solid var(--line);background:var(--white);
-    padding:13px 14px;font-family:'Manrope',sans-serif;font-size:14.5px;color:var(--ink);
-    outline:none;transition:border-color .3s ease;
-  }
-  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--imperial);}
-  .field textarea{resize:vertical;min-height:110px;}
-  .contact-form .btn{width:100%;margin-top:6px;}
-  .form-note{font-size:12.5px;color:var(--ink-soft);margin-top:14px;text-align:center;}
+    .eyebrow::before {
+      content: '';
+      width: 26px;
+      height: 1px;
+      background: var(--imperial-light);
+      display: inline-block;
+    }
 
-  /* ---------- FOOTER ---------- */
-  footer{background:var(--imperial-deep);color:#c1cbec;padding:70px 0 30px;}
-  .footer-top{
-    display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:50px;
-    padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.14);
-  }
-  .footer-logo{font-family:'Fraunces',serif;font-size:22px;color:var(--white);margin-bottom:14px;}
-  .footer-top p{font-size:14px;color:#a9b4dd;max-width:280px;}
-  .footer-col h4{color:var(--white);font-size:13.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:18px;font-family:'Manrope',sans-serif;}
-  .footer-col li{margin-bottom:11px;font-size:14px;}
-  .footer-col a:hover{color:var(--white);}
-  .footer-bottom{
-    display:flex;justify-content:space-between;align-items:center;
-    padding-top:26px;font-size:13px;color:#8b96c4;flex-wrap:wrap;gap:12px;
-  }
-  .footer-bottom .legal{display:flex;gap:24px;}
+    .section-head {
+      max-width: 640px;
+      margin-bottom: 56px;
+    }
 
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width:980px){
-    header{padding:20px 0;}
-    header.scrolled{padding:14px 0;}
-    nav ul{gap:20px;}
-    .header-cta{gap:14px;}
-    .hero .wrap{grid-template-columns:1fr;}
-    .hero .wrap{gap:44px;}
-    .hero-media{order:0;width:min(100%,420px);}
-    .service-grid{grid-template-columns:repeat(2,1fr);}
-    .process-list{grid-template-columns:repeat(2,1fr);}
-    .about .wrap{grid-template-columns:1fr;}
-    .about .media-slot{aspect-ratio:16/9;}
-    .gallery-grid{grid-template-columns:repeat(2,1fr);}
-    .gallery-grid > div{transform:none !important;}
-    .testi-grid{grid-template-columns:1fr;}
-    .contact .wrap{grid-template-columns:1fr;}
-    .footer-top{grid-template-columns:1fr 1fr;row-gap:36px;}
-  }
-  @media (max-width:900px){
-    nav,.header-cta .btn-ghost-light{display:none;}
-    .nav-toggle{display:block;}
-  }
-  @media (max-width:680px){
-    nav,.header-cta .btn-ghost-light{display:none;}
-    .nav-toggle{display:block;}
-    section{padding:72px 0;}
-    .wrap{padding-left:20px;padding-right:20px;}
-    .logo{font-size:18px;}
-    .hero{min-height:auto;padding-top:116px;padding-bottom:72px;}
-    .hero .wrap{gap:36px;}
-    .hero-media{max-width:none;}
-    .hero-media .media-slot{aspect-ratio:16/10;}
-    .hero-media::before{top:14px;left:-14px;right:14px;bottom:-14px;}
-    .hero-eyebrow{font-size:10px;letter-spacing:.12em;margin-bottom:18px;}
-    .hero-eyebrow::before{width:18px;}
-    .service-grid{grid-template-columns:1fr;}
-    .process-list{grid-template-columns:1fr;}
-    .gallery-grid{grid-template-columns:1fr 1fr;}
-    .form-row{grid-template-columns:1fr;}
-    .footer-top{grid-template-columns:1fr;}
-    .hero-trust{gap:24px;}
-    .hero h1{font-size:clamp(48px,15vw,76px);}
-    .hero-actions{flex-direction:column;gap:12px;margin-bottom:36px;}
-    .hero-actions .btn{width:100%;}
-    .hero p.lead{font-size:16px;}
-    .hero-trust strong{font-size:23px;}
-    .hero-trust span{font-size:11px;}
-    .section-head{margin-bottom:36px;}
-    .section-head p{font-size:15.5px;}
-    .contact-form{padding:28px 20px;}
-    .form-row{gap:14px;margin-bottom:14px;}
-    .cta-band .btn-row{flex-direction:column;align-items:stretch;}
-    .cta-band .btn{width:100%;}
-    .footer-bottom{align-items:flex-start;}
-    .footer-bottom .legal{gap:14px;flex-wrap:wrap;}
-  }
+    .section-head h2 {
+      font-size: clamp(28px, 3.6vw, 42px);
+    }
 
-  @media (prefers-reduced-motion:reduce){
-    *{animation:none !important;transition:none !important;}
-    .reveal::after{display:none;}
-    .reveal > *{opacity:1;}
-  }
+    .section-head p {
+      color: var(--ink-soft);
+      font-size: 16.5px;
+      margin-top: 16px;
+    }
 
-  :focus-visible{outline:2px solid var(--imperial-light);outline-offset:3px;}
-</style>
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 30px;
+      border-radius: 2px;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 14.5px;
+      letter-spacing: .02em;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all .35s cubic-bezier(.65, 0, .35, 1);
+    }
+
+    .btn-primary {
+      background: var(--imperial);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--imperial-deep);
+    }
+
+    .btn-ghost {
+      border-color: var(--imperial);
+      color: var(--imperial-deep);
+    }
+
+    .btn-ghost:hover {
+      background: var(--imperial);
+      color: var(--white);
+    }
+
+    .btn-ghost-light {
+      border-color: rgba(255, 255, 255, .55);
+      color: var(--white);
+    }
+
+    .btn-ghost-light:hover {
+      background: var(--white);
+      color: var(--imperial-deep);
+    }
+
+    /* ---------- WIPE SIGNATURE ---------- */
+
+    .reveal {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reveal::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--imperial);
+      transform-origin: left;
+      transform: scaleX(1);
+      transition: transform .95s cubic-bezier(.7, 0, .3, 1);
+      z-index: 3;
+    }
+
+    .reveal.revealed::after {
+      transform: scaleX(0);
+      transform-origin: right;
+    }
+
+    .reveal > * {
+      opacity: 0;
+      transition: opacity .3s ease .55s;
+    }
+
+    .reveal.revealed > * {
+      opacity: 1;
+    }
+
+    /* ---------- HEADER ---------- */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 26px 0;
+      transition: all .4s ease;
+      background: transparent;
+    }
+
+    header.scrolled {
+      background: rgba(13, 24, 64, .94);
+      padding: 16px 0;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 24px rgba(13, 24, 64, .15);
+    }
+
+    header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 21px;
+      color: var(--white);
+      letter-spacing: .01em;
+    }
+
+    .logo em {
+      font-style: italic;
+      font-weight: 300;
+      color: #cdd6f0;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 36px;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, .88);
+      position: relative;
+      padding: 4px 0;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      height: 1px;
+      width: 100%;
+      background: var(--white);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .4s cubic-bezier(.65, 0, .35, 1);
+    }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      margin: 5px 0;
+      transition: .3s;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(
+        155deg,
+        var(--imperial-deep) 0%,
+        var(--imperial) 62%,
+        var(--imperial-light) 100%
+      );
+      position: relative;
+      overflow: hidden;
+      padding-top: 120px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 900px;
+      height: 900px;
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 50%;
+      top: -320px;
+      right: -260px;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 640px;
+      height: 640px;
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: 50%;
+      top: -160px;
+      right: -100px;
+    }
+
+    .hero .wrap {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 70px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #a9b8e8;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 26px;
+      height: 1px;
+      background: #a9b8e8;
+    }
+
+    .hero h1 {
+      font-size: clamp(54px, 8vw, 104px);
+      color: var(--white);
+      font-weight: 450;
+      margin-bottom: 18px;
+      max-width: 700px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: #c6d1f2;
+    }
+
+    .hero-subtitle {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(20px, 2.4vw, 30px);
+      line-height: 1.25;
+      font-weight: 600;
+      color: #ffffff;
+      max-width: 560px;
+      margin-bottom: 16px;
+    }
+
+    .hero p.lead {
+      color: #d3daf3;
+      font-size: 17.5px;
+      max-width: 560px;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 46px;
+    }
+
+    .hero-trust {
+      display: flex;
+      gap: 34px;
+      flex-wrap: wrap;
+    }
+
+    .hero-trust div {
+      color: #eef1fa;
+    }
+
+    .hero-trust strong {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-size: 26px;
+      font-weight: 450;
+      color: var(--white);
+    }
+
+    .hero-trust span {
+      font-size: 12.5px;
+      color: #a9b8e8;
+      letter-spacing: .03em;
+    }
+
+    .hero-media {
+      position: relative;
+    }
+
+    .hero-media .media-slot {
+      aspect-ratio: 4 / 5;
+      border-radius: 2px;
+    }
+
+    .hero-media::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: -24px;
+      right: 24px;
+      bottom: -24px;
+      border: 1px solid rgba(255, 255, 255, .35);
+      z-index: 0;
+    }
+
+    .hero-media .media-slot {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---------- MEDIA PLACEHOLDER ---------- */
+
+    .media-slot {
+      background: linear-gradient(
+        135deg,
+        var(--imperial-mist) 0%,
+        #e2e7f6 100%
+      );
+      border: 1px dashed var(--imperial-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--imperial);
+      gap: 10px;
+      width: 100%;
+    }
+
+    .media-slot svg {
+      width: 34px;
+      height: 34px;
+      opacity: .55;
+    }
+
+    .media-slot .slot-label {
+      font-family: 'Fraunces', serif;
+      font-size: 19px;
+      font-style: italic;
+    }
+
+    .media-slot .slot-sub {
+      font-size: 11.5px;
+      color: var(--ink-soft);
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    .media-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* ---------- USP STRIP ---------- */
+
+    .usp-strip {
+      background: var(--imperial-deep);
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .usp-track {
+      display: flex;
+      gap: 0;
+      white-space: nowrap;
+      animation: scrollx 32s linear infinite;
+    }
+
+    .usp-track span {
+      color: #dbe2f6;
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 450;
+      font-size: 17px;
+      padding: 22px 40px;
+      border-right: 1px solid rgba(255, 255, 255, .14);
+    }
+
+    @keyframes scrollx {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ---------- LEISTUNGEN ---------- */
+
+    .services {
+      background: var(--white);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 44px 36px;
+      transition: background .35s ease;
+    }
+
+    .service-card:hover {
+      background: var(--mist);
+    }
+
+    .service-num {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      color: var(--imperial-light);
+      font-size: 14px;
+      margin-bottom: 22px;
+      display: block;
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--ink-soft);
+      font-size: 15px;
+    }
+
+    /* ---------- ÜBER UNS ---------- */
+
+    .about {
+      background: var(--mist);
+    }
+
+    .about .wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about .media-slot {
+      aspect-ratio: 4 / 5;
+    }
+
+    .about-copy p {
+      color: var(--ink-soft);
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .about-facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 34px;
+    }
+
+    .about-facts li {
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .about-facts strong {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-size: 15px;
+      color: var(--imperial-deep);
+      margin-bottom: 4px;
+    }
+
+    .about-facts span {
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    /* ---------- ABLAUF ---------- */
+
+    .process {
+      background: var(--imperial-deep);
+      color: var(--white);
+    }
+
+    .process .eyebrow {
+      color: #a9b8e8;
+    }
+
+    .process .eyebrow::before {
+      background: #a9b8e8;
+    }
+
+    .process .section-head h2 {
+      color: var(--white);
+    }
+
+    .process .section-head p {
+      color: #c1cbec;
+    }
+
+    .process-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 36px;
+    }
+
+    .process-step {
+      border-top: 1px solid rgba(255, 255, 255, .2);
+      padding-top: 24px;
+    }
+
+    .process-step .step-index {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 34px;
+      color: #7d90d1;
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    .process-step h3 {
+      color: var(--white);
+      font-size: 19px;
+      margin-bottom: 10px;
+      font-weight: 450;
+    }
+
+    .process-step p {
+      color: #c1cbec;
+      font-size: 14.5px;
+    }
+
+    /* ---------- GALERIE ---------- */
+
+    .gallery {
+      background: var(--white);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-grid .media-slot {
+      aspect-ratio: 3 / 4;
+    }
+
+    .gallery-grid > div:nth-child(2),
+    .gallery-grid > div:nth-child(4) {
+      transform: translateY(28px);
+    }
+
+    /* ---------- BEWERTUNGEN ---------- */
+
+    .testimonials {
+      background: var(--imperial-mist);
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .testi-card {
+      background: var(--white);
+      padding: 36px 32px;
+      border-top: 2px solid var(--imperial);
+    }
+
+    .testi-quote {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--imperial-deep);
+      margin-bottom: 22px;
+    }
+
+    .testi-name {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .testi-role {
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+
+    .stars {
+      color: var(--imperial-light);
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+
+    /* ---------- CTA BAND ---------- */
+
+    .cta-band {
+      position: relative;
+      background: var(--imperial);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .cta-band .media-slot {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      border: none;
+      border-radius: 0;
+      opacity: .22;
+    }
+
+    .cta-band .wrap {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 680px;
+    }
+
+    .cta-band .eyebrow {
+      color: #c6d1f2;
+      justify-content: center;
+    }
+
+    .cta-band .eyebrow::before {
+      background: #c6d1f2;
+    }
+
+    .cta-band h2 {
+      color: var(--white);
+      font-size: clamp(30px, 4vw, 44px);
+      margin-bottom: 18px;
+    }
+
+    .cta-band p {
+      color: #d3daf3;
+      font-size: 16.5px;
+      margin-bottom: 34px;
+    }
+
+    .cta-band .btn-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ---------- KONTAKT ---------- */
+
+    .contact {
+      background: var(--white);
+    }
+
+    .contact .wrap {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 70px;
+    }
+
+    .contact-info h2 {
+      font-size: clamp(28px, 3.6vw, 38px);
+      margin-bottom: 20px;
+    }
+
+    .contact-info > p {
+      color: var(--ink-soft);
+      margin-bottom: 36px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 16px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .info-item:last-of-type {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .info-item svg {
+      width: 20px;
+      height: 20px;
+      color: var(--imperial-light);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .info-item strong {
+      display: block;
+      font-size: 14.5px;
+      margin-bottom: 3px;
+    }
+
+    .info-item span {
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    .contact-form {
+      background: var(--mist);
+      padding: 44px;
+      border: 1px solid var(--line);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--imperial-deep);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      border: 1px solid var(--line);
+      background: var(--white);
+      padding: 13px 14px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 14.5px;
+      color: var(--ink);
+      outline: none;
+      transition: border-color .3s ease;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--imperial);
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .contact-form .btn {
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    .form-note {
+      font-size: 12.5px;
+      color: var(--ink-soft);
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+      background: var(--imperial-deep);
+      color: #c1cbec;
+      padding: 70px 0 30px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255, 255, 255, .14);
+    }
+
+    .footer-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .footer-top p {
+      font-size: 14px;
+      color: #a9b4dd;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .footer-col li {
+      margin-bottom: 11px;
+      font-size: 14px;
+    }
+
+    .footer-col a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 26px;
+      font-size: 13px;
+      color: #8b96c4;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom .legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 980px) {
+      header {
+        padding: 20px 0;
+      }
+
+      header.scrolled {
+        padding: 14px 0;
+      }
+
+      nav ul {
+        gap: 20px;
+      }
+
+      .header-cta {
+        gap: 14px;
+      }
+
+      .hero .wrap {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+
+      .hero-media {
+        order: 0;
+        width: min(100%, 420px);
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about .wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .about .media-slot {
+        aspect-ratio: 16 / 9;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid > div {
+        transform: none !important;
+      }
+
+      .testi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact .wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 36px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      nav,
+      .header-cta .btn-ghost-light {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    @media (max-width: 680px) {
+      nav,
+      .header-cta .btn-ghost-light {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+
+      .wrap {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 116px;
+        padding-bottom: 72px;
+      }
+
+      .hero .wrap {
+        gap: 36px;
+      }
+
+      .hero-media {
+        max-width: none;
+      }
+
+      .hero-media .media-slot {
+        aspect-ratio: 16 / 10;
+      }
+
+      .hero-media::before {
+        top: 14px;
+        left: -14px;
+        right: 14px;
+        bottom: -14px;
+      }
+
+      .hero-eyebrow {
+        font-size: 10px;
+        letter-spacing: .12em;
+        margin-bottom: 18px;
+      }
+
+      .hero-eyebrow::before {
+        width: 18px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-list {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-trust {
+        gap: 24px;
+      }
+
+      .hero h1 {
+        font-size: clamp(48px, 15vw, 76px);
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 36px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero p.lead {
+        font-size: 16px;
+      }
+
+      .hero-trust strong {
+        font-size: 23px;
+      }
+
+      .hero-trust span {
+        font-size: 11px;
+      }
+
+      .section-head {
+        margin-bottom: 36px;
+      }
+
+      .section-head p {
+        font-size: 15.5px;
+      }
+
+      .contact-form {
+        padding: 28px 20px;
+      }
+
+      .form-row {
+        gap: 14px;
+        margin-bottom: 14px;
+      }
+
+      .cta-band .btn-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .cta-band .btn {
+        width: 100%;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+      }
+
+      .footer-bottom .legal {
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal::after {
+        display: none;
+      }
+
+      .reveal > * {
+        opacity: 1;
+      }
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--imperial-light);
+      outline-offset: 3px;
+    }
+
+    /* ---------- FORM SUCCESS MESSAGE ---------- */
+
+    .form-success {
+      display: none;
+      background: #eef1fa;
+      border: 1px solid var(--line);
+      padding: 20px;
+      margin-top: 20px;
+      text-align: center;
+      color: var(--imperial-deep);
+    }
+
+    .form-success.show {
+      display: block;
+    }
+
+    .form-error {
+      display: none;
+      background: #fff1f1;
+      border: 1px solid #e4bcbc;
+      padding: 14px 20px;
+      margin-top: 20px;
+      text-align: center;
+      color: #8d2525;
+    }
+
+    .form-error.show {
+      display: block;
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- ================= HEADER ================= -->
-<header id="siteHeader">
-  <div class="wrap">
-    <a href="#top" class="logo">Zuverlässig <em>&amp; Mehr</em></a>
-    <nav id="mainNav">
-      <ul>
-        <li><a href="#leistungen">Leistungen</a></li>
-        <li><a href="#ueber-uns">Über uns</a></li>
-        <li><a href="#ablauf">Ablauf</a></li>
-        <li><a href="#galerie">Galerie</a></li>
-        <li><a href="#bewertungen">Bewertungen</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-    </nav>
-    <div class="header-cta">
-      <a href="#kontakt" class="btn btn-ghost-light">Angebot anfragen</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
+  <!-- ================= HEADER ================= -->
 
-<!-- ================= HERO ================= -->
-<section class="hero" id="top">
-  <div class="wrap">
-    <div class="hero-copy">
-      <div class="hero-eyebrow">Zuverlässig &amp; Mehr · Außenreinigung</div>
-      <h1>Zuverlässig <em>&amp; Mehr</em></h1>
-      <div class="hero-subtitle">Hochdruckreinigung für draußen.</div>
-      <p class="lead">Wir reinigen Terrassen, Einfahrten, Wege und Fassaden gründlich mit professionellem Hochdruck. Für sichtbar saubere Außenflächen, zuverlässig und termintreu.</p>
-      <div class="hero-actions">
-        <a href="#kontakt" class="btn btn-primary">Angebot anfordern</a>
-        <a href="#leistungen" class="btn btn-ghost-light">Leistungen ansehen</a>
-      </div>
-      <div class="hero-trust">
-        <div><strong>100%</strong><span>Versichert &amp; geprüft</span></div>
-        <div><strong>24 Std.</strong><span>Antwort auf Anfragen</span></div>
-        <div><strong>Fest­preis</strong><span>Keine versteckten Kosten</span></div>
-      </div>
-    </div>
-    <div class="hero-media">
-      <div class="media-slot">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="15" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5-9 9"/></svg>
-        <span class="slot-label">Hochdruckreinigung</span>
-        <span class="slot-sub">Hochformat · Außenfläche vor und nach der Reinigung</span>
-      </div>
-    </div>
-  </div>
-</section>
+  <header id="siteHeader">
+    <div class="wrap">
 
-<!-- ================= USP MARQUEE ================= -->
-<div class="usp-strip">
-  <div class="usp-track">
-    <span>Zuverlässig &amp; pünktlich</span>
-    <span>Versichert &amp; geprüft</span>
-    <span>Faire Festpreise</span>
-    <span>Starke Hochdruckreinigung</span>
-    <span>Flexible Terminwahl</span>
-    <span>Zufriedenheitsgarantie</span>
-    <span>Zuverlässig &amp; pünktlich</span>
-    <span>Versichert &amp; geprüft</span>
-    <span>Faire Festpreise</span>
-    <span>Saubere Außenflächen</span>
-    <span>Flexible Terminwahl</span>
-    <span>Zufriedenheitsgarantie</span>
-  </div>
-</div>
+      <a href="#top" class="logo">
+        WaschBären <em>Service</em>
+      </a>
 
-<!-- ================= LEISTUNGEN ================= -->
-<section class="services" id="leistungen">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Unsere Leistungen</div>
-      <h2>Saubere Außenflächen, auf die Sie stolz sein können</h2>
-      <p>Mit professioneller Hochdruckreinigung entfernen wir tief sitzenden Schmutz von Ihren Außenflächen – gründlich, sichtbar und zuverlässig.</p>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="service-grid">
-      <div class="service-card">
-        <span class="service-num">Hochdruckreinigung</span>
-        <h3>Terrassen &amp; Einfahrten</h3>
-        <p>Wir lösen Moos, Algen, Flecken und jahrelangen Schmutz von Pflaster, Stein, Beton und Terrassen.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-num">Unterhaltsreinigung</span>
-        <h3>Regelmäßige Reinigung</h3>
-        <p>Wöchentlich, zweiwöchentlich oder monatlich – für Wohnung und Zuhause, dauerhaft sauber gehalten.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-num">Grundreinigung</span>
-        <h3>Intensivreinigung</h3>
-        <p>Gründliche Tiefenreinigung inklusive schwer zugänglicher Stellen, Fugen und Verglasung.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-num">Fensterreinigung</span>
-        <h3>Streifenfreier Glanz</h3>
-        <p>Innen und außen, inklusive Rahmen und Fensterbänke – für klare Sicht ohne Schlieren.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-num">Büroreinigung</span>
-        <h3>Gewerbliche Objekte</h3>
-        <p>Praxen, Kanzleien und Büros – diskret außerhalb Ihrer Geschäftszeiten gereinigt.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-num">Umzugsreinigung</span>
-        <h3>Ein- &amp; Auszug</h3>
-        <p>Besenreine Übergabe mit Abnahmegarantie – Ärger mit dem Vermieter gehört der Vergangenheit an.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-num">Sonderreinigung</span>
-        <h3>Nach Renovierung</h3>
-        <p>Baustaub, Farbreste und Feinschmutz nach Handwerkerarbeiten – rückstandslos entfernt.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= ÜBER UNS ================= -->
-<section class="about" id="ueber-uns">
-  <div class="wrap">
-    <div class="media-slot reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="15" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5-9 9"/></svg>
-      <span class="slot-label">Bild 2</span>
-      <span class="slot-sub">Hochformat · Team- oder Portraitfoto</span>
-    </div>
-    <div class="about-copy">
-      <div class="eyebrow">Über uns</div>
-      <h2>Ein Name, dem Sie vertrauen können</h2>
-      <p>Zuverlässig &amp; Mehr wurde mit einem einfachen Anspruch gegründet: Reinigung, die hält, was der Name verspricht. Wir starten dort, wo es am meisten zählt – bei der Sauberkeit Ihres Zuhauses und Ihrer Geschäftsräume – und wachsen mit den Wünschen unserer Kundschaft weiter.</p>
-      <p>Unser Team arbeitet mit geprüften, umweltschonenden Reinigungsmitteln, festen Ansprechpartnern und einem klaren Qualitätsversprechen. Kein Kleingedrucktes, keine bösen Überraschungen – nur saubere Ergebnisse.</p>
-      <ul class="about-facts">
-        <li><strong>Versichert</strong><span>Vollständiger Haftungsschutz bei jedem Einsatz</span></li>
-        <li><strong>Geschultes Team</strong><span>Regelmäßige Schulungen &amp; feste Qualitätsstandards</span></li>
-        <li><strong>Flexibel</strong><span>Termine auch kurzfristig &amp; außerhalb der Bürozeiten</span></li>
-        <li><strong>Transparent</strong><span>Festpreise ohne versteckte Kosten</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ================= ABLAUF ================= -->
-<section class="process" id="ablauf">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">So einfach geht's</div>
-      <h2>Vom ersten Kontakt bis zum sauberen Ergebnis</h2>
-      <p>Vier klare Schritte, transparent und ohne Aufwand für Sie.</p>
-    </div>
-    <div class="process-list">
-      <div class="process-step">
-        <span class="step-index">01</span>
-        <h3>Anfrage stellen</h3>
-        <p>Sie schildern uns kurz Ihren Bedarf – per Formular, E-Mail oder Telefon.</p>
-      </div>
-      <div class="process-step">
-        <span class="step-index">02</span>
-        <h3>Angebot &amp; Termin</h3>
-        <p>Wir erstellen ein unverbindliches Festpreisangebot und vereinbaren einen passenden Termin.</p>
-      </div>
-      <div class="process-step">
-        <span class="step-index">03</span>
-        <h3>Reinigung vor Ort</h3>
-        <p>Unser geschultes Team erledigt die Arbeit gründlich, pünktlich und diskret.</p>
-      </div>
-      <div class="process-step">
-        <span class="step-index">04</span>
-        <h3>Abnahme &amp; Feedback</h3>
-        <p>Sie prüfen das Ergebnis gemeinsam mit uns – erst wenn Sie zufrieden sind, sind wir es auch.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= GALERIE ================= -->
-<section class="gallery" id="galerie">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Einblicke</div>
-      <h2>Unsere Arbeit im Detail</h2>
-      <p>Ein kleiner Einblick in abgeschlossene Projekte und den Alltag unseres Teams.</p>
-    </div>
-    <div class="gallery-grid">
-      <div class="media-slot reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="15" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5-9 9"/></svg>
-        <span class="slot-label">Bild 3</span>
-        <span class="slot-sub">Hochformat</span>
-      </div>
-      <div class="media-slot reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="15" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5-9 9"/></svg>
-        <span class="slot-label">Bild 4</span>
-        <span class="slot-sub">Hochformat</span>
-      </div>
-      <div class="media-slot reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="15" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5-9 9"/></svg>
-        <span class="slot-label">Bild 5</span>
-        <span class="slot-sub">Hochformat</span>
-      </div>
-      <div class="media-slot reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="15" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5-9 9"/></svg>
-        <span class="slot-label">Bild 6</span>
-        <span class="slot-sub">Hochformat</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= BEWERTUNGEN ================= -->
-<section class="testimonials" id="bewertungen">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Bewertungen</div>
-      <h2>Was unsere Kundschaft sagt</h2>
-      <p>Wir lassen unsere Arbeit für sich sprechen.</p>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-quote">„Pünktlich, freundlich und wirklich gründlich. Unsere Wohnung glänzt wie nie zuvor."</p>
-        <div class="testi-name">Sabine H.</div>
-        <div class="testi-role">Unterhaltsreinigung, München</div>
-      </div>
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-quote">„Die Umzugsreinigung hat uns viel Stress erspart – die Wohnungsübergabe lief reibungslos."</p>
-        <div class="testi-name">Markus L.</div>
-        <div class="testi-role">Umzugsreinigung, Augsburg</div>
-      </div>
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-quote">„Faire Preise, klare Kommunikation und ein Team, auf das man sich wirklich verlassen kann."</p>
-        <div class="testi-name">Jasmin K.</div>
-        <div class="testi-role">Büroreinigung, Ingolstadt</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CTA BAND ================= -->
-<section class="cta-band">
-  <div class="media-slot" style="border:none;border-radius:0;">
-    <span class="slot-label">Bild 7</span>
-    <span class="slot-sub">Querformat · Hintergrundbild</span>
-  </div>
-  <div class="wrap">
-    <div class="eyebrow">Bereit für mehr Sauberkeit?</div>
-    <h2>Fordern Sie noch heute Ihr Angebot an</h2>
-    <p>Unverbindlich, transparent und innerhalb von 24 Stunden beantwortet.</p>
-    <div class="btn-row">
-      <a href="#kontakt" class="btn btn-ghost-light">Jetzt Angebot anfordern</a>
-      <a href="tel:+49000000000" class="btn btn-ghost-light">Anrufen</a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= KONTAKT ================= -->
-<section class="contact" id="kontakt">
-  <div class="wrap">
-    <div class="contact-info">
-      <div class="eyebrow">Kontakt</div>
-      <h2>Lassen Sie uns sprechen</h2>
-      <p>Schreiben Sie uns Ihr Anliegen oder rufen Sie direkt an – wir melden uns innerhalb von 24 Stunden mit einem passenden Angebot.</p>
-
-      <div class="info-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <div><strong>Adresse</strong><span>Musterstraße 12, 80331 München</span></div>
-      </div>
-      <div class="info-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2z"/></svg>
-        <div><strong>Telefon</strong><span>+49 (0) 00 000 00</span></div>
-      </div>
-      <div class="info-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
-        <div><strong>E-Mail</strong><span>info@zuverlaessig-und-mehr.de</span></div>
-      </div>
-      <div class="info-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-        <div><strong>Öffnungszeiten</strong><span>Mo–Fr: 08:00–18:00 Uhr · Sa: 09:00–13:00 Uhr</span></div>
-      </div>
-    </div>
-
-    <form class="contact-form" onsubmit="return false;">
-      <div class="form-row">
-        <div class="field">
-          <label for="vorname">Vorname</label>
-          <input type="text" id="vorname" name="vorname" placeholder="Ihr Vorname" required>
-        </div>
-        <div class="field">
-          <label for="nachname">Nachname</label>
-          <input type="text" id="nachname" name="nachname" placeholder="Ihr Nachname" required>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="field">
-          <label for="email">E-Mail</label>
-          <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
-        </div>
-        <div class="field">
-          <label for="telefon">Telefon</label>
-          <input type="tel" id="telefon" name="telefon" placeholder="Optional">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="field full">
-          <label for="leistung">Gewünschte Leistung</label>
-          <select id="leistung" name="leistung">
-            <option>Unterhaltsreinigung</option>
-            <option>Grundreinigung</option>
-            <option>Fensterreinigung</option>
-            <option>Büroreinigung</option>
-            <option>Umzugsreinigung</option>
-            <option>Sonderreinigung</option>
-            <option>Sonstiges</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="field full">
-          <label for="nachricht">Nachricht</label>
-          <textarea id="nachricht" name="nachricht" placeholder="Beschreiben Sie kurz Ihr Anliegen – z. B. Objektgröße, Wunschtermin, Besonderheiten."></textarea>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary">Anfrage senden</button>
-      <p class="form-note">Mit dem Absenden stimmen Sie unserer Datenschutzerklärung zu.</p>
-    </form>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <div class="footer-logo">Zuverlässig &amp; Mehr</div>
-        <p>Professionelle Reinigung für Wohnung, Büro und mehr – zuverlässig, versichert und mit Festpreisgarantie.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Leistungen</h4>
+      <nav id="mainNav">
         <ul>
-          <li><a href="#leistungen">Unterhaltsreinigung</a></li>
-          <li><a href="#leistungen">Grundreinigung</a></li>
-          <li><a href="#leistungen">Fensterreinigung</a></li>
-          <li><a href="#leistungen">Büroreinigung</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Unternehmen</h4>
-        <ul>
+          <li><a href="#leistungen">Leistungen</a></li>
           <li><a href="#ueber-uns">Über uns</a></li>
           <li><a href="#ablauf">Ablauf</a></li>
           <li><a href="#galerie">Galerie</a></li>
           <li><a href="#bewertungen">Bewertungen</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
         </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a href="#kontakt" class="btn btn-ghost-light">
+          Angebot anfragen
+        </a>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Menü öffnen"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-      <div class="footer-col">
-        <h4>Kontakt</h4>
-        <ul>
-          <li>Musterstraße 12</li>
-          <li>80331 München</li>
-          <li>+49 (0) 00 000 00</li>
-          <li>info@zuverlaessig-und-mehr.de</li>
-        </ul>
-      </div>
+
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Zuverlässig &amp; Mehr. Alle Rechte vorbehalten.</span>
-      <div class="legal">
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
-        <a href="#">AGB</a>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero" id="top">
+
+    <div class="wrap">
+
+      <div class="hero-copy">
+
+        <div class="hero-eyebrow">
+          WaschBären Service · Außenreinigung
+        </div>
+
+        <h1>
+          WaschBären <em>Service</em>
+        </h1>
+
+        <div class="hero-subtitle">
+          Saubere Böden und Flächen im Außenbereich.
+        </div>
+
+        <p class="lead">
+          Wir bieten aktuell Boden- und Flächenreinigung sowie Fenster-, Glas-
+          und weitere Außenreinigung an. Gründlich, zuverlässig und termintreu.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#kontakt" class="btn btn-primary">
+            Angebot anfordern
+          </a>
+
+          <a href="#leistungen" class="btn btn-ghost-light">
+            Leistungen ansehen
+          </a>
+        </div>
+
+        <div class="hero-trust">
+
+          <div>
+            <strong>100%</strong>
+            <span>Versichert &amp; geprüft</span>
+          </div>
+
+          <div>
+            <strong>24 Std.</strong>
+            <span>Antwort auf Anfragen</span>
+          </div>
+
+          <div>
+            <strong>Festpreis</strong>
+            <span>Keine versteckten Kosten</span>
+          </div>
+
+        </div>
+
       </div>
+
+      <div class="hero-media">
+
+        <div class="media-slot">
+          <img src="bilder/hero.jpg" alt="Boden- und Flächenreinigung" />
+        </div>
+
+      </div>
+
     </div>
+
+  </section>
+
+
+  <!-- ================= USP MARQUEE ================= -->
+
+  <div class="usp-strip">
+
+    <div class="usp-track">
+
+      <span>Zuverlässig &amp; pünktlich</span>
+      <span>Versichert &amp; geprüft</span>
+      <span>Faire Festpreise</span>
+      <span>Boden- und Flächenreinigung</span>
+      <span>Flexible Terminwahl</span>
+      <span>Zufriedenheitsgarantie</span>
+
+      <span>Zuverlässig &amp; pünktlich</span>
+      <span>Versichert &amp; geprüft</span>
+      <span>Faire Festpreise</span>
+      <span>Fenster- und Glasreinigung</span>
+      <span>Flexible Terminwahl</span>
+      <span>Zufriedenheitsgarantie</span>
+
+    </div>
+
   </div>
-</footer>
 
-<script>
-  // Header background on scroll
-  const header = document.getElementById('siteHeader');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-  });
 
-  // Mobile nav toggle
-  const navToggle = document.getElementById('navToggle');
-  const mainNav = document.getElementById('mainNav');
-  navToggle.addEventListener('click', () => {
-    const open = mainNav.style.display === 'block';
-    mainNav.style.display = open ? 'none' : 'block';
-    if (!open) {
-      mainNav.style.position = 'absolute';
-      mainNav.style.top = '100%';
-      mainNav.style.left = '0';
-      mainNav.style.right = '0';
-      mainNav.style.background = 'rgba(13,24,64,.98)';
-      mainNav.style.padding = '10px 20px 26px';
-      mainNav.querySelector('ul').style.flexDirection = 'column';
-      mainNav.querySelector('ul').style.gap = '18px';
-    }
-  });
+  <!-- ================= LEISTUNGEN ================= -->
 
-  // Wipe reveal animation
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('revealed'), i * 90);
-        io.unobserve(entry.target);
-      }
+  <section class="services" id="leistungen">
+
+    <div class="wrap">
+
+      <div class="section-head reveal">
+
+        <div class="eyebrow">
+          Unsere Leistungen
+        </div>
+
+        <h2>
+          Unsere Leistungen für saubere Flächen
+        </h2>
+
+        <p>
+          Wir konzentrieren uns aktuell auf Boden- und Flächenreinigung,
+          Fenster und Glas sowie weitere Außenreinigung.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="wrap">
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <span class="service-num">01 · Boden- und Flächenreinigung</span>
+          <h3>Saubere Außenflächen</h3>
+          <p>Hochdruckreinigung, Unkrautentfernung und Fassadenreinigung für gründlich gepflegte Böden und Flächen.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-num">02 · Fenster und Glas</span>
+          <h3>Klare Sicht</h3>
+          <p>Fensterreinigung, Fensterrahmenreinigung und Glasflächenreinigung für streifenfreien Glanz.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-num">03 · Weitere Außenreinigung</span>
+          <h3>Gepflegte Außenbereiche</h3>
+          <p>Laub- und Schmutzbeseitigung sowie Winterdienst für saubere und sichere Außenflächen.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= ÜBER UNS ================= -->
+
+  <section class="about" id="ueber-uns">
+
+    <div class="wrap">
+
+      <div class="media-slot reveal">
+        <img src="bilder/about.jpeg" alt="Team von WaschBären Service" />
+      </div>
+
+      <div class="about-copy">
+
+        <div class="eyebrow">
+          Über uns
+        </div>
+
+        <h2>
+          Ein Name, dem Sie vertrauen können
+        </h2>
+
+        <p>
+          WaschBären Service steht für gründliche Reinigung, die hält, was
+          der Name verspricht. Unser aktueller Schwerpunkt liegt auf Boden-
+          und Flächenreinigung, Fenstern und Glas sowie der Pflege von
+          Außenbereichen.
+        </p>
+
+        <p>
+          Unser Team arbeitet mit geprüften, umweltschonenden Reinigungsmitteln,
+          festen Ansprechpartnern und einem klaren Qualitätsversprechen.
+          Kein Kleingedrucktes, keine bösen Überraschungen – nur saubere
+          Ergebnisse.
+        </p>
+
+        <ul class="about-facts">
+
+          <li>
+            <strong>Versichert</strong>
+            <span>
+              Vollständiger Haftungsschutz bei jedem Einsatz
+            </span>
+          </li>
+
+          <li>
+            <strong>Geschultes Team</strong>
+            <span>
+              Regelmäßige Schulungen &amp; feste Qualitätsstandards
+            </span>
+          </li>
+
+          <li>
+            <strong>Flexibel</strong>
+            <span>
+              Termine auch kurzfristig &amp; außerhalb der Bürozeiten
+            </span>
+          </li>
+
+          <li>
+            <strong>Transparent</strong>
+            <span>
+              Festpreise ohne versteckte Kosten
+            </span>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= ABLAUF ================= -->
+
+  <section class="process" id="ablauf">
+
+    <div class="wrap">
+
+      <div class="section-head reveal">
+
+        <div class="eyebrow">
+          So einfach geht's
+        </div>
+
+        <h2>
+          Vom ersten Kontakt bis zum sauberen Ergebnis
+        </h2>
+
+        <p>
+          Vier klare Schritte, transparent und ohne Aufwand für Sie.
+        </p>
+
+      </div>
+
+      <div class="process-list">
+
+        <div class="process-step">
+          <span class="step-index">01</span>
+          <h3>Anfrage stellen</h3>
+          <p>
+            Sie schildern uns kurz Ihren Bedarf – per Formular, E-Mail oder Telefon.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-index">02</span>
+          <h3>Angebot &amp; Termin</h3>
+          <p>
+            Wir erstellen ein unverbindliches Festpreisangebot und vereinbaren
+            einen passenden Termin.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-index">03</span>
+          <h3>Reinigung vor Ort</h3>
+          <p>
+            Unser geschultes Team erledigt die Arbeit gründlich, pünktlich und diskret.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-index">04</span>
+          <h3>Abnahme &amp; Feedback</h3>
+          <p>
+            Sie prüfen das Ergebnis gemeinsam mit uns – erst wenn Sie zufrieden
+            sind, sind wir es auch.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= GALERIE ================= -->
+
+  <section class="gallery" id="galerie">
+
+    <div class="wrap">
+
+      <div class="section-head reveal">
+
+        <div class="eyebrow">
+          Einblicke
+        </div>
+
+        <h2>
+          Unsere Arbeit im Detail
+        </h2>
+
+        <p>
+          Ein kleiner Einblick in abgeschlossene Projekte und den Alltag unseres Teams.
+        </p>
+
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="media-slot reveal">
+          <img src="bilder/ergebnis-1.jpeg" alt="Reinigungsarbeit an einer Außenfläche" />
+        </div>
+
+        <div class="media-slot reveal">
+          <img src="bilder/ergebnis-2.jpeg" alt="Saubere Fläche nach der Reinigung" />
+        </div>
+
+        <div class="media-slot reveal">
+          <img src="bilder/ergebnis-3.jpeg" alt="Fenster- und Glasreinigung" />
+        </div>
+
+        <div class="media-slot reveal">
+          <img src="bilder/ergebnis-4.jpeg" alt="Außenreinigung vor Ort" />
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= BEWERTUNGEN ================= -->
+
+  <section class="testimonials" id="bewertungen">
+
+    <div class="wrap">
+
+      <div class="section-head reveal">
+
+        <div class="eyebrow">
+          Bewertungen
+        </div>
+
+        <h2>
+          Was unsere Kundschaft sagt
+        </h2>
+
+        <p>
+          Wir lassen unsere Arbeit für sich sprechen.
+        </p>
+
+      </div>
+
+      <div class="testi-grid">
+
+        <div class="testi-card">
+
+          <div class="stars">★★★★★</div>
+
+          <p class="testi-quote">
+            „Pünktlich, freundlich und wirklich gründlich. Unsere Wohnung
+            glänzt wie nie zuvor."
+          </p>
+
+          <div class="testi-name">Sabine H.</div>
+          <div class="testi-role">Flächenreinigung, München</div>
+
+        </div>
+
+        <div class="testi-card">
+
+          <div class="stars">★★★★★</div>
+
+          <p class="testi-quote">
+            „Die Flächenreinigung hat uns viel Stress erspart – alles war
+            schnell wieder sauber und gepflegt."
+          </p>
+
+          <div class="testi-name">Markus L.</div>
+          <div class="testi-role">Außenreinigung, Augsburg</div>
+
+        </div>
+
+        <div class="testi-card">
+
+          <div class="stars">★★★★★</div>
+
+          <p class="testi-quote">
+            „Faire Preise, klare Kommunikation und ein Team, auf das man
+            sich wirklich verlassen kann."
+          </p>
+
+          <div class="testi-name">Jasmin K.</div>
+          <div class="testi-role">Fensterreinigung, Ingolstadt</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CTA BAND ================= -->
+
+  <section class="cta-band">
+
+    <div
+      class="media-slot"
+      style="border:none;border-radius:0;"
+    >
+      <img src="bilder/cta-bg.jpg" alt="Saubere Außenfläche für Netto" />
+    </div>
+
+    <div class="wrap">
+
+      <div class="eyebrow">
+        Bereit für mehr Sauberkeit?
+      </div>
+
+      <h2>
+        Fordern Sie noch heute Ihr Angebot an
+      </h2>
+
+      <p>
+        Unverbindlich, transparent und innerhalb von 24 Stunden beantwortet.
+      </p>
+
+      <div class="btn-row">
+
+        <a href="#kontakt" class="btn btn-ghost-light">
+          Jetzt Angebot anfordern
+        </a>
+
+        <a
+          href="tel:+49000000000"
+          class="btn btn-ghost-light"
+        >
+          Anrufen
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= KONTAKT ================= -->
+
+  <section class="contact" id="kontakt">
+
+    <div class="wrap">
+
+      <div class="contact-info">
+
+        <div class="eyebrow">
+          Kontakt
+        </div>
+
+        <h2>
+          Lassen Sie uns sprechen
+        </h2>
+
+        <p>
+          Schreiben Sie uns Ihr Anliegen oder rufen Sie direkt an – wir melden
+          uns innerhalb von 24 Stunden mit einem passenden Angebot.
+        </p>
+
+        <div class="info-item">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          >
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+
+          <div>
+            <strong>Adresse</strong>
+            <span>Musterstraße 12, 80331 München</span>
+          </div>
+
+        </div>
+
+        <div class="info-item">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          >
+            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2z"/>
+          </svg>
+
+          <div>
+            <strong>Telefon</strong>
+            <span>+49 (0) 00 000 00</span>
+          </div>
+
+        </div>
+
+        <div class="info-item">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          >
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m2 6 10 7 10-7"/>
+          </svg>
+
+          <div>
+            <strong>E-Mail</strong>
+            <span>info@waschbaeren-service.de</span>
+          </div>
+
+        </div>
+
+        <div class="info-item">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          >
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5l3.5 2"/>
+          </svg>
+
+          <div>
+            <strong>Öffnungszeiten</strong>
+            <span>
+              Mo–Fr: 08:00–18:00 Uhr · Sa: 09:00–13:00 Uhr
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= FORMSPREE FORM ================= -->
+
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/xnpayyko"
+        method="POST"
+        id="contactForm"
+      >
+
+        <!-- Betreff der E-Mail bei Formspree -->
+        <input
+          type="hidden"
+          name="_subject"
+          value="Neue Anfrage – WaschBären Service"
+        >
+
+        <div class="form-row">
+
+          <div class="field">
+
+            <label for="vorname">
+              Vorname
+            </label>
+
+            <input
+              type="text"
+              id="vorname"
+              name="Vorname"
+              placeholder="Ihr Vorname"
+              required
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label for="nachname">
+              Nachname
+            </label>
+
+            <input
+              type="text"
+              id="nachname"
+              name="Nachname"
+              placeholder="Ihr Nachname"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="field">
+
+            <label for="email">
+              E-Mail
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="E-Mail"
+              placeholder="ihre@email.de"
+              required
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label for="telefon">
+              Telefon
+            </label>
+
+            <input
+              type="tel"
+              id="telefon"
+              name="Telefon"
+              placeholder="Optional"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="field full">
+
+            <label for="leistung">
+              Gewünschte Leistung
+            </label>
+
+            <select
+              id="leistung"
+              name="Gewünschte Leistung"
+              required
+            >
+
+              <option value="">
+                Bitte auswählen
+              </option>
+
+              <option value="Boden- und Flächenreinigung">
+                Boden- und Flächenreinigung
+              </option>
+
+              <option value="Fenster und Glas">
+                Fenster und Glas
+              </option>
+
+              <option value="Weitere Außenreinigung">
+                Weitere Außenreinigung
+              </option>
+
+              <option value="Sonstiges">
+                Sonstiges
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="field full">
+
+            <label for="nachricht">
+              Nachricht
+            </label>
+
+            <textarea
+              id="nachricht"
+              name="Nachricht"
+              placeholder="Beschreiben Sie kurz Ihr Anliegen – z. B. Objektgröße, gewünschte Fläche, Besonderheiten usw."
+              required
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+        >
+          Anfrage senden
+        </button>
+
+        <p class="form-note">
+          Mit dem Absenden stimmen Sie unserer Datenschutzerklärung zu.
+        </p>
+
+        <p class="form-success" id="formSuccess" role="status" aria-live="polite">
+          Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns so schnell wie möglich bei Ihnen.
+        </p>
+
+        <p class="form-error" id="formError" role="alert">
+          Ihre Anfrage konnte gerade nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.
+        </p>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="wrap">
+
+      <div class="footer-top">
+
+        <div>
+
+          <div class="footer-logo">
+            WaschBären Service
+          </div>
+
+          <p>
+            Professionelle Außenreinigung – zuverlässig, versichert und
+            transparent.
+          </p>
+
+        </div>
+
+
+        <div class="footer-col">
+
+          <h4>Leistungen</h4>
+
+          <ul>
+            <li>
+              <a href="#leistungen">
+                Boden- und Flächenreinigung
+              </a>
+            </li>
+
+            <li>
+              <a href="#leistungen">
+                Fenster und Glas
+              </a>
+            </li>
+
+            <li>
+              <a href="#leistungen">
+                Weitere Außenreinigung
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+
+        <div class="footer-col">
+
+          <h4>Unternehmen</h4>
+
+          <ul>
+
+            <li>
+              <a href="#ueber-uns">
+                Über uns
+              </a>
+            </li>
+
+            <li>
+              <a href="#ablauf">
+                Ablauf
+              </a>
+            </li>
+
+            <li>
+              <a href="#galerie">
+                Galerie
+              </a>
+            </li>
+
+            <li>
+              <a href="#bewertungen">
+                Bewertungen
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="footer-col">
+
+          <h4>Kontakt</h4>
+
+          <ul>
+
+            <li>Musterstraße 12</li>
+            <li>80331 München</li>
+            <li>+49 (0) 00 000 00</li>
+            <li>info@waschbaeren-service.de</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+            © 2026 WaschBären Service. Alle Rechte vorbehalten.
+        </span>
+
+        <div class="legal">
+
+          <a href="#">
+            Impressum
+          </a>
+
+          <a href="#">
+            Datenschutz
+          </a>
+
+          <a href="#">
+            AGB
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    // Header background on scroll
+
+    const header = document.getElementById('siteHeader');
+
+    window.addEventListener('scroll', () => {
+
+      header.classList.toggle(
+        'scrolled',
+        window.scrollY > 40
+      );
+
     });
-  }, { threshold: 0.2 });
-  revealEls.forEach(el => io.observe(el));
-</script>
+
+
+    // Mobile nav toggle
+
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', () => {
+
+      const open = mainNav.style.display === 'block';
+
+      mainNav.style.display = open ? 'none' : 'block';
+
+      if (!open) {
+
+        mainNav.style.position = 'absolute';
+        mainNav.style.top = '100%';
+        mainNav.style.left = '0';
+        mainNav.style.right = '0';
+        mainNav.style.background = 'rgba(13,24,64,.98)';
+        mainNav.style.padding = '10px 20px 26px';
+
+        mainNav.querySelector('ul').style.flexDirection = 'column';
+        mainNav.querySelector('ul').style.gap = '18px';
+
+      }
+
+    });
+
+
+    // Wipe reveal animation
+
+    const revealEls = document.querySelectorAll('.reveal');
+
+    const io = new IntersectionObserver((entries) => {
+
+      entries.forEach((entry, i) => {
+
+        if (entry.isIntersecting) {
+
+          setTimeout(() => {
+
+            entry.target.classList.add('revealed');
+
+          }, i * 90);
+
+          io.unobserve(entry.target);
+
+        }
+
+      });
+
+    }, {
+      threshold: 0.2
+    });
+
+    revealEls.forEach(el => io.observe(el));
+
+
+    // Submit the form in the background so visitors stay on the website.
+
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+    const formError = document.getElementById('formError');
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+
+    contactForm.addEventListener('submit', async (event) => {
+
+      event.preventDefault();
+      formSuccess.classList.remove('show');
+      formError.classList.remove('show');
+      submitButton.disabled = true;
+      submitButton.textContent = 'Wird gesendet ...';
+
+      try {
+
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: {
+            Accept: 'application/json'
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Form submission failed');
+        }
+
+        contactForm.reset();
+        formSuccess.classList.add('show');
+        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      } catch (error) {
+
+        formError.classList.add('show');
+
+      } finally {
+
+        submitButton.disabled = false;
+        submitButton.textContent = 'Anfrage senden';
+
+      }
+
+    });
+
+  </script>
 
 </body>
 </html>
